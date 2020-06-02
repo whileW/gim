@@ -1,7 +1,7 @@
 package msg
 
 import (
-	"im/user"
+	"github.com/whileW/im/user"
 	"encoding/json"
 	"errors"
 )

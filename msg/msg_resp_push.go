@@ -1,8 +1,8 @@
 package msg
 
 import (
-	"im/user"
-	"im/utils"
+	"github.com/whileW/im/user"
+	"github.com/whileW/im/utils"
 	"github.com/google/uuid"
 	"time"
 )

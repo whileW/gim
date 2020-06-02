@@ -1,7 +1,7 @@
 package user
 
 import (
-	"im/utils"
+	"github.com/whileW/im/utils"
 )
 
 const (

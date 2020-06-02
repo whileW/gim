@@ -1,8 +1,8 @@
 package msg
 
 import (
-	"im/agreement"
-	"im/user"
+	"github.com/whileW/im/agreement"
+	"github.com/whileW/im/user"
 	"github.com/google/uuid"
 	"github.com/gorilla/websocket"
 	"net/url"

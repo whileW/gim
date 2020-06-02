@@ -1,9 +1,9 @@
 package msg
 
 import (
-	"im/user"
+	"github.com/whileW/im/user"
 	"errors"
-	"im/utils"
+	"github.com/whileW/im/utils"
 	"strings"
 )
 

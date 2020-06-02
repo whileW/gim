@@ -1,7 +1,7 @@
 package user
 
 import (
-	"im/agreement"
+	"github.com/whileW/im/agreement"
 	"sync"
 	"time"
 )
