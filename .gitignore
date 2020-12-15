@@ -3,6 +3,8 @@
 output/
 config.yaml
 Log/*
+gim
+gim-win.exe
 
 # Binaries for programs and plugins
 *.exe
