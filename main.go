@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"github.com/whileW/enze-global"
 	"github.com/whileW/enze-global/initialize"
-	"im/model"
-	"im/router"
-	"im/service"
+	"gim/model"
+	"gim/router"
+	"gim/service"
+	"github.com/whileW/enze-global/log"
 	"runtime"
 )
 
@@ -44,6 +46,9 @@ func main()  {
 }
 
 func run_http() {
+	//配置gin
+	gin.DefaultWriter = &log.DisableGinDefaultLog{}
+	gin.DefaultErrorWriter = &log.GinErrLog{}
 	r := global.InitGin()
 	r.GET("ws",service.WebSocketHander)		//websocket
 

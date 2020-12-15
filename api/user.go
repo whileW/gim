@@ -3,9 +3,9 @@ package api
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/whileW/enze-global/utils/resp"
-	"im/model"
-	"im/model/request"
-	"im/service"
+	"gim/model"
+	"gim/model/request"
+	"gim/service"
 )
 
 func Login(c *gin.Context)  {
@@ -17,7 +17,7 @@ func Login(c *gin.Context)  {
 		resp.FailWithMessage(c,err.Error())
 		return
 	}
-	token,err := service.GenerateTokenStaff(u.UUID,u.Name,u.HeadImg)
+	token,err := service.GenerateTokenUser(u.UUID,u.Name,u.HeadImg)
 	if err != nil {
 		resp.FailWithMessage(c,err.Error())
 		return
@@ -39,7 +39,7 @@ func Reg(c *gin.Context)  {
 		resp.FailWithMessage(c,err.Error())
 		return
 	}
-	token,err := service.GenerateTokenStaff(u.UUID,u.Name,u.HeadImg)
+	token,err := service.GenerateTokenUser(u.UUID,u.Name,u.HeadImg)
 	if err != nil {
 		resp.Ok(c)
 		return

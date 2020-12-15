@@ -1,6 +1,8 @@
 .idea/
 .DS_Store
 output/
+config.yaml
+Log/*
 
 # Binaries for programs and plugins
 *.exe

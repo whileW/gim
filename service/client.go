@@ -65,8 +65,9 @@ func (c *Client)Read()  {
 }
 
 func (c *Client)HandleMessage(msg *Message)  {
-	c.MessageHandleAck.HandleMessage(msg)
 	switch msg.Cmd {
+	case CmdPing:
+		c.SendPongMsg()
 	case CmdAuth:
 		if str,ok := msg.Body.(string);ok {
 			t,err := ParseTokenUser(str)
@@ -80,4 +81,14 @@ func (c *Client)HandleMessage(msg *Message)  {
 			c.SendAckMsg(msg.UUID,Ack_Para_Codec_Err,"auth body must be string")
 		}
 	}
+	if !c.is_auth {
+		c.SendAckMsg(msg.UUID,Ack_Auth_Please_Login,"please login first")
+	}else {
+		c.MessageHandleAck.HandleMessage(msg)
+	}
+
+}
+
+func (c *Client)SendPongMsg()  {
+	c.EnqueueMessage(&Message{Cmd:CmdPong})
 }

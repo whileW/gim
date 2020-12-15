@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"im/api"
+	"gim/api"
 )
 
 func InitUserRouter(Router *gin.RouterGroup)  {

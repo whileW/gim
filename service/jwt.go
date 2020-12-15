@@ -4,7 +4,7 @@ import (
 	"errors"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/whileW/enze-global"
-	"im/model/request"
+	"gim/model/request"
 	"time"
 )
 
@@ -16,7 +16,7 @@ func GenerateTokenUser(id,name,head_img string) (string,error) {
 		HeadImg:	head_img,
 		StandardClaims: jwt.StandardClaims{
 			NotBefore: time.Now().Unix() - 1000,       		// 签名生效时间
-			Issuer:    "geeran-im",                       // 签名的发行者
+			Issuer:    "geeran-gim",                       // 签名的发行者
 		},
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256,claims)
